@@ -1,0 +1,76 @@
+/* ========================================================
+   SCROLL ANIMATION LANDING PAGE — DESIGN SYSTEM
+   ======================================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #111;
+  --carbon: #0b0b0b;
+  --white: #ffffff;
+  --font-heading: 'Antonio', sans-serif;
+  --font-body: 'Archivo Narrow', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ========================================================
+   TODO: Add your component styles here
+   Follow the BLUEPRINT.md step by step.
+
+   Sections to add:
+   1. Preloader styles
+   2. Navigation styles
+   3. Hero + Canvas styles
+   4. Section shared styles
+   5. Product intro styles
+   6. Button styles
+   7. Carousel styles
+   8. Featured banner styles
+   9. Essentials grid styles
+   10. Footer styles
+   11. Reveal animation styles
+   12. Responsive breakpoints
+   ======================================================== */
