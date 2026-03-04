@@ -73,7 +73,7 @@ Each blueprint includes:
 | [Nike Tiger Scroll Animation](blueprints/landing-pages/nike-tiger-scroll-animation/) | :red_circle: | 6-8 hrs | $8,000 - $15,000 | HTML, CSS, JS, GSAP, Canvas | :white_check_mark: |
 | Luxury Real Estate Landing | :yellow_circle: | 4-6 hrs | $5,000 - $10,000 | Next.js, Tailwind, Framer Motion | :soon: |
 | SaaS Waitlist Launch Page | :green_circle: | 2-3 hrs | $3,000 - $5,000 | HTML, Tailwind, Supabase | :soon: |
-| Restaurant / Food Brand Landing | :green_circle: | 2-4 hrs | $2,000 - $5,000 | HTML, CSS, JS | :soon: |
+| [Artisan Food Parallax Landing](blueprints/landing-pages/artisan-food-parallax-landing/) | :yellow_circle: | 3-5 hrs | $3,000 - $8,000 | HTML, CSS, JS, GSAP, ScrollTrigger | :white_check_mark: |
 
 ### :computer: Web Apps / SaaS
 

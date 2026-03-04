@@ -1,0 +1,83 @@
+/* ========================================================
+   ARTISAN FOOD PARALLAX LANDING — DESIGN SYSTEM
+   ======================================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --chocolate: #2c1810;
+  --chocolate-light: #4a2c20;
+  --cream: #faf5ef;
+  --cream-dark: #f0e6d8;
+  --gold: #c8a45e;
+  --gold-light: #d4b87a;
+  --sage: #6b7c5e;
+  --charcoal: #1a1a1a;
+  --white: #ffffff;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--chocolate);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ========================================================
+   TODO: Add your component styles here
+   Follow the BLUEPRINT.md step by step.
+
+   Sections to add:
+   1. Preloader styles
+   2. Navigation styles (sticky, transparent → solid)
+   3. Hero parallax layers + content
+   4. Section shared styles (eyebrow, titles, body text)
+   5. Story section (split grid layout)
+   6. Product showcase (grid + card hover effects)
+   7. Process steps (flexbox cards)
+   8. Testimonial styles
+   9. CTA / Newsletter styles
+   10. Footer styles
+   11. Reveal animation styles
+   12. Responsive breakpoints (1024px, 768px, 480px)
+   ======================================================== */
