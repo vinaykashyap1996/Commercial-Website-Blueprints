@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>MONOLITH | Architectural Studio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Noto Serif + Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Material Symbols (icons) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Design System Config -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container":        "#c5a059",
+            "surface-dim":              "#dcd9d9",
+            "surface-container-highest":"#e5e2e1",
+            "on-surface-variant":       "#4e4639",
+            "primary-fixed":            "#ffdea5",
+            "surface":                  "#fcf9f8",
+            "secondary":                "#5f5e5e",
+            "background":               "#fcf9f8",
+            "on-secondary":             "#ffffff",
+            "surface-variant":          "#e5e2e1",
+            "surface-container-lowest": "#ffffff",
+            "outline":                  "#7f7667",
+            "surface-container-high":   "#eae7e7",
+            "inverse-surface":          "#313030",
+            "secondary-container":      "#e4e2e1",
+            "on-tertiary-container":    "#393b3b",
+            "primary-fixed-dim":        "#e9c176",
+            "on-background":            "#1c1b1b",
+            "surface-container-low":    "#f6f3f2",
+            "surface-container":        "#f0eded",
+            "on-primary-container":     "#4e3700",
+            "inverse-primary":          "#e9c176",
+            "on-primary":               "#ffffff",
+            "outline-variant":          "#d1c5b4",
+            "inverse-on-surface":       "#f3f0ef",
+            "on-surface":               "#1c1b1b",
+            "surface-tint":             "#775a19",
+            "tertiary-container":       "#a4a5a5",
+            "primary":                  "#775a19"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body":     ["Manrope"],
+            "label":    ["Manrope"]
+          },
+          borderRadius: {
+            "DEFAULT": "0px",
+            "lg":      "0px",
+            "xl":      "0px",
+            "full":    "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- ─── TOP NAV ─────────────────────────────────────────────────────────── -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md flex justify-between items-center px-6 md:px-12 py-6">
+    <div class="text-2xl font-serif font-light tracking-tighter text-stone-900">MONOLITH</div>
+
+    <div class="hidden md:flex gap-12 items-center">
+      <a class="font-serif tracking-widest uppercase text-sm text-yellow-700 border-b border-yellow-700 pb-1 transition-colors" href="#">Portfolio</a>
+      <a class="font-serif tracking-widest uppercase text-sm text-stone-500 hover:text-stone-900 transition-colors" href="#">Philosophy</a>
+      <a class="font-serif tracking-widest uppercase text-sm text-stone-500 hover:text-stone-900 transition-colors" href="#">Studio</a>
+    </div>
+
+    <button class="bg-primary text-on-primary px-6 py-3 font-serif tracking-widest uppercase text-xs hover:bg-primary-container transition-all active:scale-95 duration-300">
+      Private Consultation
+    </button>
+  </nav>
+
+  <!-- ─── SIDE NAV (Desktop Only) ──────────────────────────────────────────── -->
+  <aside class="hidden lg:flex fixed left-0 top-0 h-full w-20 bg-stone-50/80 flex-col items-center py-12 gap-12 z-40">
+    <div class="font-serif italic text-xl text-stone-900 mt-16">M</div>
+
+    <div class="flex flex-col gap-10 items-center justify-center flex-1">
+      <!-- Active: Overview -->
+      <div class="group flex flex-col items-center gap-2 cursor-pointer transition-all duration-700 hover:text-yellow-600 hover:translate-x-1">
+        <span class="material-symbols-outlined text-yellow-700 font-bold" style="font-variation-settings: 'FILL' 1;">architecture</span>
+        <span class="font-sans uppercase tracking-[0.2em] text-[8px] rotate-90 mt-4 text-yellow-700">Overview</span>
+      </div>
+      <!-- Materials -->
+      <div class="group flex flex-col items-center gap-2 cursor-pointer transition-all duration-700 hover:text-yellow-600 hover:translate-x-1">
+        <span class="material-symbols-outlined text-stone-400">texture</span>
+        <span class="font-sans uppercase tracking-[0.2em] text-[8px] rotate-90 mt-4 text-stone-400">Materials</span>
+      </div>
+      <!-- Structure -->
+      <div class="group flex flex-col items-center gap-2 cursor-pointer transition-all duration-700 hover:text-yellow-600 hover:translate-x-1">
+        <span class="material-symbols-outlined text-stone-400">layers</span>
+        <span class="font-sans uppercase tracking-[0.2em] text-[8px] rotate-90 mt-4 text-stone-400">Structure</span>
+      </div>
+      <!-- Legacy -->
+      <div class="group flex flex-col items-center gap-2 cursor-pointer transition-all duration-700 hover:text-yellow-600 hover:translate-x-1">
+        <span class="material-symbols-outlined text-stone-400">history</span>
+        <span class="font-sans uppercase tracking-[0.2em] text-[8px] rotate-90 mt-4 text-stone-400">Legacy</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN SPLIT-SCREEN ─────────────────────────────────────────────────── -->
+  <main class="flex flex-col md:flex-row min-h-screen pt-24 lg:pl-20">
+
+    <!-- LEFT: Sticky Visual Stage -->
+    <section class="md:w-[48%] h-[512px] md:h-[calc(100vh-6rem)] md:sticky md:top-24 overflow-hidden bg-surface-container">
+      <div class="relative w-full h-full">
+
+        <!-- Visual 1: Hero — visible by default -->
+        <div class="absolute inset-0 transition-all duration-1000 ease-in-out opacity-100 scale-100" id="visual-hero">
+          <img
+            alt="Minimalist modern concrete house exterior against blue sky"
+            class="w-full h-full object-cover"
+            src="assets/hero.jpg"
+          />
+          <div class="absolute inset-0 bg-black/5"></div>
+        </div>
+
+        <!-- Visual 2: Philosophy -->
+        <div class="absolute inset-0 transition-all duration-1000 ease-in-out opacity-0 scale-105" id="visual-philosophy">
+          <img
+            alt="Asymmetrical architectural detail with dramatic light and shadow"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="assets/philosophy.jpg"
+          />
+          <div class="absolute inset-0 bg-stone-900/10"></div>
+        </div>
+
+        <!-- Visual 3: Signature Commission -->
+        <div class="absolute inset-0 transition-all duration-1000 ease-in-out opacity-0 scale-105" id="visual-signature">
+          <img
+            alt="Luxury infinity pool reflecting a geometric mansion at dusk"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="assets/signature.jpg"
+          />
+        </div>
+
+        <!-- Visual 4: Craft / Materials -->
+        <div class="absolute inset-0 transition-all duration-1000 ease-in-out opacity-0 scale-105" id="visual-craft">
+          <img
+            alt="Macro shot of textured raw travertine stone material"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            src="assets/craft.jpg"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RIGHT: Scrollable Narrative Chapters -->
+    <section class="md:w-[52%] px-8 md:px-16 lg:px-24">
+
+      <!-- ── Chapter 1: Manifesto ─────────────────────────────────────────── -->
+      <article class="min-h-[819px] flex flex-col justify-center py-24 space-y-12" id="chapter-hero">
+        <span class="font-sans uppercase tracking-[0.4em] text-[10px] text-primary">Manifesto</span>
+        <h1 class="serif-display text-5xl md:text-7xl lg:text-8xl leading-tight font-light tracking-tighter text-on-surface">
+          Architecture <br />of <span class="italic text-primary">Permanence.</span>
+        </h1>
+        <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed font-light">
+          We do not build houses. We curate the silent vessels of human legacy — where stone and light converge into absolute stillness.
+        </p>
+      </article>
+
+      <!-- ── Chapter 2: Design Philosophy ────────────────────────────────── -->
+      <article class="min-h-screen py-24 flex flex-col justify-center" id="chapter-philosophy">
+        <div class="relative">
+          <div class="bg-surface-container-low p-12 md:p-20 relative z-10 border-l-4 border-primary">
+            <span class="font-sans uppercase tracking-[0.3em] text-[10px] text-primary block mb-8">Philosophy</span>
+            <h2 class="serif-display text-4xl md:text-5xl mb-12 font-light italic">
+              "The dialogue between space and soul is written in the language of shadow."
+            </h2>
+            <p class="font-body text-on-surface-variant leading-relaxed max-w-md">
+              Our approach rejects the ephemeral. Every line is a commitment to the site's history and the occupant's future. We prioritize the breath of a room — the intentional void that allows for life to settle.
+            </p>
+          </div>
+          <!-- Decorative gold square -->
+          <div class="absolute -bottom-10 -right-4 w-32 h-32 bg-primary-container/20 -z-0"></div>
+        </div>
+      </article>
+
+      <!-- ── Chapter 3: Signature Commission ─────────────────────────────── -->
+      <article class="min-h-screen py-24 space-y-16" id="chapter-signature">
+        <div class="space-y-4">
+          <span class="font-sans uppercase tracking-[0.3em] text-[10px] text-primary">Selected Commission</span>
+          <h2 class="serif-display text-5xl font-light">The Obsidian Pavilion</h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-12">
+          <div class="aspect-[4/3] relative overflow-hidden bg-surface-container">
+            <img
+              alt="Interior of an ultra-modern living room with massive floor-to-ceiling windows"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              loading="lazy"
+              src="assets/signature.jpg"
+            />
+          </div>
+
+          <div class="flex flex-wrap gap-12 py-8 border-y border-outline-variant/30">
+            <div class="space-y-1">
+              <span class="block font-sans uppercase tracking-widest text-[9px] text-outline">Location</span>
+              <span class="block font-serif text-lg">Santorini, Greece</span>
+            </div>
+            <div class="space-y-1">
+              <span class="block font-sans uppercase tracking-widest text-[9px] text-outline">Completion</span>
+              <span class="block font-serif text-lg">Summer 2023</span>
+            </div>
+            <div class="space-y-1">
+              <span class="block font-sans uppercase tracking-widest text-[9px] text-outline">Footprint</span>
+              <span class="block font-serif text-lg">1,200 m²</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Chapter 4: Material & Craft ─────────────────────────────────── -->
+      <article class="min-h-screen py-24 space-y-24" id="chapter-craft">
+        <div class="flex flex-col md:flex-row gap-16 items-start">
+
+          <div class="w-full md:w-1/2 space-y-8">
+            <h2 class="serif-display text-4xl font-light italic text-primary">The Tactile Authority</h2>
+            <p class="font-body text-on-surface-variant leading-relaxed">
+              We source from quarries that have stood for millennia. Raw travertine, charred cedar, and hand-poured bronze are the elements of our alchemy.
+            </p>
+
+            <div class="space-y-6 pt-8">
+              <div class="flex justify-between items-center border-b border-outline-variant/20 pb-4">
+                <span class="font-sans uppercase tracking-[0.2em] text-[10px]">01. Raw Travertine</span>
+                <span class="material-symbols-outlined text-primary text-sm">north_east</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-outline-variant/20 pb-4">
+                <span class="font-sans uppercase tracking-[0.2em] text-[10px]">02. Smoked Oak</span>
+                <span class="material-symbols-outlined text-primary text-sm">north_east</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-outline-variant/20 pb-4">
+                <span class="font-sans uppercase tracking-[0.2em] text-[10px]">03. Oxidized Steel</span>
+                <span class="material-symbols-outlined text-primary text-sm">north_east</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2 bg-surface-container-high h-[400px]">
+            <img
+              alt="Abstract close-up of dark minimalist interior wood textures"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              src="assets/craft.jpg"
+            />
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Chapter 5: Global Presence ──────────────────────────────────── -->
+      <article class="min-h-[819px] py-24" id="chapter-global">
+        <div class="space-y-16">
+          <div class="space-y-6">
+            <span class="font-sans uppercase tracking-[0.3em] text-[10px] text-primary">Presence</span>
+            <h2 class="serif-display text-5xl font-light">Studio Locations</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-4 group cursor-pointer">
+              <div class="h-1 bg-outline-variant/20 group-hover:bg-primary transition-all duration-500 origin-left"></div>
+              <h3 class="serif-display text-2xl">Zurich</h3>
+              <p class="font-sans text-[11px] uppercase tracking-widest text-on-surface-variant">Central Hub &amp; Archive</p>
+            </div>
+            <div class="space-y-4 group cursor-pointer">
+              <div class="h-1 bg-outline-variant/20 group-hover:bg-primary transition-all duration-500 origin-left"></div>
+              <h3 class="serif-display text-2xl">Tokyo</h3>
+              <p class="font-sans text-[11px] uppercase tracking-widest text-on-surface-variant">Eastern Material Lab</p>
+            </div>
+            <div class="space-y-4 group cursor-pointer">
+              <div class="h-1 bg-outline-variant/20 group-hover:bg-primary transition-all duration-500 origin-left"></div>
+              <h3 class="serif-display text-2xl">New York</h3>
+              <p class="font-sans text-[11px] uppercase tracking-widest text-on-surface-variant">Design Intelligence</p>
+            </div>
+            <div class="space-y-4 group cursor-pointer">
+              <div class="h-1 bg-outline-variant/20 group-hover:bg-primary transition-all duration-500 origin-left"></div>
+              <h3 class="serif-display text-2xl">Dubai</h3>
+              <p class="font-sans text-[11px] uppercase tracking-widest text-on-surface-variant">Structural Engineering</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Chapter 6: Private Consultation ─────────────────────────────── -->
+      <article class="min-h-screen py-24 flex flex-col justify-center" id="chapter-consult">
+        <div class="bg-surface-container-lowest p-8 md:p-16 shadow-2xl shadow-on-surface/5">
+
+          <div class="space-y-8 mb-16">
+            <span class="font-sans uppercase tracking-[0.4em] text-[10px] text-primary">Inquiry</span>
+            <h2 class="serif-display text-5xl font-light">Private Commission Request</h2>
+            <p class="font-body text-on-surface-variant max-w-sm">
+              Entry into our portfolio is by invitation or application. Please share the essence of your vision.
+            </p>
+          </div>
+
+          <form class="space-y-12">
+            <!-- Full Name -->
+            <div class="relative">
+              <input
+                class="peer block w-full appearance-none border-0 border-b border-outline bg-transparent px-0 py-4 text-on-surface focus:border-primary focus:outline-none focus:ring-0"
+                id="name"
+                placeholder=" "
+                type="text"
+              />
+              <label
+                class="absolute top-4 -z-10 origin-[0] -translate-y-8 scale-75 transform text-xs uppercase tracking-widest text-on-surface-variant duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-primary"
+                for="name"
+              >Full Name</label>
+            </div>
+
+            <!-- Email Address -->
+            <div class="relative">
+              <input
+                class="peer block w-full appearance-none border-0 border-b border-outline bg-transparent px-0 py-4 text-on-surface focus:border-primary focus:outline-none focus:ring-0"
+                id="email"
+                placeholder=" "
+                type="email"
+              />
+              <label
+                class="absolute top-4 -z-10 origin-[0] -translate-y-8 scale-75 transform text-xs uppercase tracking-widest text-on-surface-variant duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-primary"
+                for="email"
+              >Email Address</label>
+            </div>
+
+            <!-- Project Vision -->
+            <div class="relative">
+              <textarea
+                class="peer block w-full appearance-none border-0 border-b border-outline bg-transparent px-0 py-4 text-on-surface focus:border-primary focus:outline-none focus:ring-0"
+                id="vision"
+                placeholder=" "
+                rows="3"
+              ></textarea>
+              <label
+                class="absolute top-4 -z-10 origin-[0] -translate-y-8 scale-75 transform text-xs uppercase tracking-widest text-on-surface-variant duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-primary"
+                for="vision"
+              >Project Vision</label>
+            </div>
+
+            <button
+              class="w-full bg-primary text-on-primary py-6 serif-display text-xl uppercase tracking-widest hover:bg-primary-container transition-all active:scale-[0.98]"
+              type="submit"
+            >
+              Submit Inquiry
+            </button>
+          </form>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────────────────── -->
+  <footer class="bg-stone-50 flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24">
+    <div class="text-stone-900 font-serif text-xl tracking-tighter mb-8 md:mb-0">MONOLITH</div>
+    <div class="font-sans font-light tracking-widest text-[10px] uppercase text-stone-400">
+      © 2024 Monolith Architectural Group. All Rights Reserved.
+    </div>
+    <div class="flex gap-8 mt-8 md:mt-0">
+      <a class="font-sans font-light tracking-widest text-[10px] uppercase text-stone-400 hover:text-yellow-700 transition-colors duration-300" href="#">Privacy</a>
+      <a class="font-sans font-light tracking-widest text-[10px] uppercase text-stone-400 hover:text-yellow-700 transition-colors duration-300" href="#">Terms</a>
+      <a class="font-sans font-light tracking-widest text-[10px] uppercase text-stone-400 hover:text-yellow-700 transition-colors duration-300" href="#">Press</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

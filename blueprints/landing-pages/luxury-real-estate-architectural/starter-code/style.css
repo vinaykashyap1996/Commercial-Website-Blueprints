@@ -1,0 +1,55 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Luxury Real Estate Architectural Landing — Custom Styles
+   Complements Tailwind CSS CDN. Only styles that Tailwind cannot express.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Base */
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #fcf9f8;
+  color: #1c1b1b;
+}
+
+/* Serif display helper — apply to any element that uses Noto Serif */
+.serif-display {
+  font-family: 'Noto Serif', serif;
+}
+
+/* ─── Visual Stage Transition States ─────────────────────────────────────────
+   These classes are toggled by app.js to crossfade between left-panel images.
+   The actual transition is driven by Tailwind's transition-all duration-1000,
+   so these are only here for documentation / non-Tailwind fallback.
+   ─────────────────────────────────────────────────────────────────────────── */
+.visual-stage-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.visual-stage-inactive {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+/* ─── Hide Scrollbar ──────────────────────────────────────────────────────────
+   Used on any overflow container where the scrollbar should be invisible.
+   ─────────────────────────────────────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Print Styles ────────────────────────────────────────────────────────────
+   Strip navigation and restore layout for printing.
+   ─────────────────────────────────────────────────────────────────────────── */
+@media print {
+  aside,
+  nav {
+    display: none;
+  }
+  main {
+    padding: 0;
+  }
+}
